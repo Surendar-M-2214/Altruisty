@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom"
+import Home from "./Pagecompos/Home";
+import Aboutus from "./Pagecompos/Aboutus";
+import Services from "./Pagecompos/Services";
+import Ipss from "./Pagecompos/Ipss";
+import Training from "./Pagecompos/Training";
+import Contactus from "./Pagecompos/Contactus";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Router>
+     <Routes>
+     <Route path="/" element={<Home/>}/>
+     <Route path="/Services" element={<Services/>}/>
+     <Route path="/Ipss" element={<Ipss/>}/>
+     <Route path="/Training" element={<Training/>}/>
+     <Route path="/Contactus" element={<Contactus/>}/>
+     <Route path="/Aboutus" element={<Aboutus/>}/>
+     </Routes>
+     </Router>
     </div>
   );
 }
